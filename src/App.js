@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import {Routes, Route} from 'react-router-dom'
 import './App.css';
+import Home from './components/Home'
+import OptionA from './choices/OptionA'
+import OptionB from './choices/OptionB'
+import OptionB2 from './choices/OptionB2';
+import Dim from './choices/Dim';
+import Low from './choices/Low';
+import Moderate from './choices/Moderate';
+import Strong from './choices/Strong';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='optionA' element={<OptionA/>}/>
+      <Route path='optionB' element={<OptionB/>}/>
+      <Route path='optionB/optionB2' element={<OptionB2/>}/>
+      <Route path='optionB/optionB2/dim' element={<Dim/>}/>
+      <Route path='optionB/optionB2/low' element={<Low/>}/>
+      <Route path='optionB/optionB2/moderate' element={<Moderate/>}/>
+      <Route path='optionB/optionB2/strong' element={<Strong/>}/>
+     </Routes>
     </div>
   );
 }
